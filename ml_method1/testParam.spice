@@ -1,0 +1,31 @@
+* NMOS sweep (Sky130) 
+
+
+XM1 VDD gate GND GND sky130_fd_pr__nfet_01v8_lvt l=0.15 w=1.6 nf=1 ad='floor((nf+1)/2) * w/nf * 0.29' as='floor((nf+2)/2) * w/nf * 0.29' pd='2 * floor((nf+1)/2) * (w/nf + 0.29)' ps='2 * floor((nf+2)/2) * (w/nf + 0.29)' nrd='0.29 / w' nrs='0.29 / w' sa=0 sb=0 sd=0 
+
+.lib "/home/oliviag/skywater130nm/volare/sky130/versions/a918dc7c8e474a99b68c85eb3546b4ed91fe9e7b/sky130A/libs.tech/ngspice/sky130.lib.spice" tt_77k
+
+Vgs gate GND 0
+Vds VDD GND 1.48
+.temp -196.15
+
+.control
+set noaskquit
+set filetype=ascii
+
+alterparam vth0_nom = 1.3514227867126465
+alterparam u0_nom = 8.016054153442383
+alterparam rdsw_nom = 2.7952463626861572
+alterparam nfactor_nom = 24.611268997192383 
+alterparam vsat_nom = 2.346750259399414
+alterparam eta0_nom = 2.436180830001831
+alterparam delta_nom = 8.145480155944824
+reset
+dc Vgs 0 1.85 0.01
+set wr_singlescale
+let ax_id2 = vds#branch
+*let ax_id2 = vdrain#branch
+wrdata /home/oliviag/ngspice-skywater-sims/ml_method1/test_measurements/vgs_prediction.dat vdd gate ax_id2 
+quit
+.endc
+.end
