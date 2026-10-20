@@ -133,14 +133,14 @@ pfet_mod_6 = {  "vth0_nom" : 2.54819 ,
                 "pvag_nom" : 1 ,
                 "delta_nom" : 1 
 }
-pfet_mod_7 = {  "vth0_nom" : 3.48149 ,
+pfet_mod_7 = {  "vth0_nom" : 3.48149 , #4.84695
                 "dvt0_nom" : 1 ,
                 "dvt1_nom" : 1 ,
-                "vsat_nom" : 0.01 ,
+                "vsat_nom" : 4114.3 ,
                 "ua_nom" : 1 ,
                 "ub_nom" : 1 ,
                 "uc_nom" : 1 ,
-                "rdsw_nom" : 7.37549 ,
+                "rdsw_nom" : 4.40825 , #7.37549 ,
                 "prwg_nom" : 1 ,
                 "u0_nom" : 16.941 ,
                 "rdw_nom" : 1 ,

@@ -11,7 +11,7 @@ from getCSV import makeCSV
 from getIV import getIvVd, getIvVg
 from scipy.stats import qmc
 import re
-N_RUNS = 100000
+N_RUNS = 10000
 #SPICE_FILE = "nfet_base.spice"
 PARENT_DIR = Path.home() / "ngspice-skywater-sims/montecarlo/mc_output_lhc"
 desired_device = 0
@@ -42,7 +42,7 @@ def getHypercube(num_samples, runDir, p):
     PARAMS = ["vth0", "vsat", "rdsw", "u0", "nfactor", "eta0", "delta"]
     #num_vars = len(PARAMS)
     
-    # 2. Your specified multipliers/ranges
+    # 2. Your specified multipliers/ranges, calculated using paramRangeValidation
     n_bounds = {
         "vth0": (0.1, 10),
         "vsat": (0.1, 10),
