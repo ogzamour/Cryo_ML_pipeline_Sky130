@@ -88,6 +88,7 @@ Then, run ```python runAll.py``` in both the nfet_mod and pfet_mod directories *
 After both are run, ensure the paths in getRMS.py match your directory (for both the cryo data and modeled pfet/nfet data). Then, run ```python rrmsCalc.py``` in the RRMS directory and the RRMS should print in terminal.
 
 ***could also choose to not rerun pfet/nfet models since the output files are included already in repo***
+***The current floor used for each device in the training is obtained from scripts in the RRMS file, which were delevoped by the UTA team***
 
 
 ## Training Data Generation
